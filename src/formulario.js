@@ -3,6 +3,7 @@ import siguientePaso from "./siguientePaso";
 import validarCantidad from "./validaciones/validarCantidad";
 import validarCorreo from "./validaciones/validarCorreo";
 import validarNombre from "./validaciones/validarNombre";
+const alertaActiva= document.getElementById('alerta');
 
 const formulario = document.getElementById("formulario");
 
@@ -87,8 +88,19 @@ btnFormulario.classList.add('formulario__btn--disabled');
 setTimeout(() => {
     formulario.classList.add('formulario--hidden');
     document.getElementById('alerta').classList.add('alerta--active');
+    
+    // Después de 4 segundos, mostramos la alerta, y después de 4 segundos más, recargamos la página.
+    setTimeout(() => {
+        // Recargar la página después de 2 segundos (4000 milisegundos)
+        location.reload();
+    }, 4000);
 }, 4000);
-} else {
+
+
+}
+
+else {
 siguientePaso();
 }
 });
+

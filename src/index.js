@@ -1,2 +1,2 @@
 import "./formulario";
-
+import "./lineaPasos";
